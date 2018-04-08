@@ -40,7 +40,7 @@ for k in years:                                                 #For loop to ite
 	if attacks[k-1] == 0:
 		good_years.append("'%s" % years[k-1])
 					
-print(good_years)
+
 print("There will be %s total attacks between the start of 2001 and the end of 2099" % sum(attacks))
 print("The maximum number of attacks will be %s attacks in 20%s" % (max(attacks), years[attacks.index(max(attacks))]))
 print("There are %s years with no attacks." % len(good_years))

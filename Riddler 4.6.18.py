@@ -5,6 +5,7 @@ longest_gap = current_gap = 0
 start_month = gap_month = 0
 start_day = gap_day = 0
 start_year = gap_year = 0
+good_years = []
 
 for k in years:                                                 #For loop to iterate through years
 	for i in range(1,months+1):                                 #For loop to iterate through months of each year
@@ -36,7 +37,12 @@ for k in years:                                                 #For loop to ite
 					start_day = j
 					start_month = i
 					start_year = k
+	if attacks[k-1] == 0:
+		good_years.append("'%s" % years[k-1])
 					
-
-print("The maximum number of attacks will be in 20%s" % years[attacks.index(max(attacks))])
+print(good_years)
+print("There will be %s total attacks between the start of 2001 and the end of 2099" % sum(attacks))
+print("The maximum number of attacks will be %s attacks in 20%s" % (max(attacks), years[attacks.index(max(attacks))]))
+print("There are %s years with no attacks." % len(good_years))
+print("These years are:", *good_years, sep = ", ")
 print("The longest gap is %s days from %s/%s/%s - %s/%s/%s" % (longest_gap, longest_gap_month, longest_gap_day, longest_gap_year, gap_month, gap_day, gap_year))

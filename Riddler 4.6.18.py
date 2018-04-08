@@ -34,7 +34,7 @@ for k in years:                                                 #For loop to ite
 			else: 												
 				current_gap += 1                                #Add to gap
 				if current_gap == 1:                            #Reset gap start counters if there was an attack the day before
-					start_day = j
+					start_day = j-1
 					start_month = i
 					start_year = k
 	if attacks[k-1] == 0:
